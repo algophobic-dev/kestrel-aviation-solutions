@@ -1,0 +1,104 @@
+/* Kestrel Aviation Solutions. Same colours, type and parts as the Kestrel EFB website. */
+:root {
+  --ground: #10161a; --panel: #1a2228; --raised: #252f37; --line: #2c3842;
+  --ink: #eef3f6; --soft: #a7b5bf; --accent: #2bb3a0; --accent-ink: #06211d;
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --display: clamp(40px, 4.6vw, 68px); --h2: clamp(28px, 3vw, 44px); --statement: clamp(20px, 1.8vw, 24px);
+  --body: 18px; --small: 15px;
+  --m: clamp(20px, 2.8vw, 40px); --gap: clamp(72px, 9vw, 128px); --r: 6px;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--ground); color: var(--ink); font: var(--body)/1.5 var(--font); overflow-x: hidden; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+h1, h2, h3, p { margin: 0; }
+h1 { font-size: var(--display); line-height: 1.04; letter-spacing: -.03em; font-weight: 650; text-wrap: balance; }
+h2 { font-size: var(--h2); line-height: 1.08; letter-spacing: -.025em; font-weight: 650; text-wrap: balance; }
+h3 { font-size: var(--statement); line-height: 1.25; letter-spacing: -.01em; font-weight: 600; }
+p { max-width: 62ch; }
+.soft { color: var(--soft); }
+.small { font-size: var(--small); }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+::selection { background: var(--accent); color: var(--accent-ink); }
+
+.wrap { padding-inline: var(--m); max-width: 1280px; margin-inline: auto; }
+section { margin-top: var(--gap); }
+
+/* Navigation: wordmark, links, one action */
+.nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 24px var(--m); font-size: var(--small); max-width: 1280px; margin-inline: auto; }
+.nav .mark { display: flex; align-items: center; gap: 10px; white-space: nowrap; font-weight: 700; font-size: 18px; text-decoration: none; letter-spacing: -.01em; }
+.nav .mark img { width: 28px; height: 28px; border-radius: 6px; }
+.nav ul { display: flex; align-items: center; gap: clamp(14px, 2.2vw, 30px); list-style: none; margin: 0; padding: 0; }
+.nav a { text-decoration: none; }
+.nav ul a:not(.btn) { padding: 10px 0; }
+.nav ul a:not(.btn):hover, .nav a[aria-current] { color: var(--accent); }
+
+/* Buttons and links */
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 0 20px; border-radius: var(--r); border: 0; cursor: pointer;
+  background: var(--accent); color: var(--accent-ink); font: 600 16px/1 var(--font); white-space: nowrap; text-decoration: none; transition: background .15s; }
+.btn:hover { background: #39c9b5; }
+.btn.quiet { background: var(--raised); color: var(--ink); }
+.btn.quiet:hover { background: #303c46; }
+.btn.sm { min-height: 40px; padding: 0 14px; font-size: var(--small); }
+.link { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; text-decoration-color: var(--accent); }
+.link:hover { color: var(--accent); }
+.acts { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px; margin-top: 28px; }
+
+/* Home intro */
+.intro { margin-top: 0; padding-top: clamp(40px, 7vw, 96px); }
+.intro h1 { max-width: 16ch; }
+.intro p { margin-top: 22px; font-size: var(--statement); line-height: 1.45; color: var(--soft); max-width: 46ch; }
+.page-head { margin-top: 0; padding-top: clamp(40px, 6vw, 80px); }
+.page-head p { margin-top: 16px; font-size: var(--statement); line-height: 1.45; color: var(--soft); max-width: 48ch; }
+.sect-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px; }
+
+/* Product cards, built from products.json */
+.products { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 520px), 1fr)); gap: 16px; margin-top: 28px; }
+.product { display: grid; grid-template-columns: minmax(0, 1fr); background: var(--panel); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.product .pic { border-bottom: 1px solid var(--line); background: var(--raised); }
+.product .pic img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: left top; }
+.product .body { padding: 22px 24px 24px; }
+.product .top { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.product .tag { font-size: 13px; font-weight: 700; padding: 3px 8px; border-radius: 4px; background: var(--raised); color: var(--soft); }
+.product .tag.on { background: #12544b; color: #c9f4ec; }
+.product .summary { margin-top: 6px; font-weight: 600; }
+.product .desc { margin-top: 8px; color: var(--soft); }
+.product .acts { margin-top: 20px; }
+/* With one product, the card runs across the page: picture beside the text. */
+.products.one .product { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); }
+.products.one .product .pic { border-bottom: 0; border-right: 1px solid var(--line); }
+.products.one .product .pic img { height: 100%; }
+.products.one .product .body { align-self: center; padding: clamp(24px, 3vw, 40px); }
+
+/* Plain panels for About and Contact */
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: clamp(22px, 3vw, 36px); }
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 16px; margin-top: 28px; }
+.cols h3 + p, .panel h3 + p { margin-top: 8px; }
+.prose p + p { margin-top: 16px; }
+.prose h2 + p { margin-top: 16px; }
+
+/* Footer */
+footer { margin-top: clamp(96px, 14vw, 180px); border-top: 1px solid var(--line); }
+footer .in { max-width: 1280px; margin-inline: auto; padding: 28px var(--m) 32px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 32px; font-size: var(--small); color: var(--soft); }
+footer nav { display: flex; gap: 20px; flex-wrap: wrap; }
+footer nav a { color: var(--ink); text-decoration: none; padding: 4px 0; }
+footer nav a:hover { color: var(--accent); }
+
+/* Not found */
+.lost { min-height: 50vh; display: grid; align-content: center; }
+
+/* Narrow screens: the name on one row, the links on the next. */
+@media (max-width: 640px) {
+  .nav { flex-wrap: wrap; row-gap: 4px; }
+  .nav nav { width: 100%; }
+  .nav ul { gap: 18px; }
+  .nav ul li:last-child { margin-left: auto; }
+}
+@media (max-width: 760px) {
+  :root { --body: 17px; }
+  .nav { padding-block: 16px; }
+  .products.one .product { grid-template-columns: minmax(0, 1fr); }
+  .products.one .product .pic { border-right: 0; border-bottom: 1px solid var(--line); }
+  .products.one .product .pic img { height: auto; }
+}
