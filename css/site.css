@@ -137,3 +137,15 @@ html:not(.js) .carousel .controls { display: none; }
   .carousel .track { scroll-behavior: auto; }
   .js .carousel .slide img, .product, .product .pic img, .btn { transition: none; transform: none !important; }
 }
+
+/* Hero: text on the left, product carousel on the right. Stacked on narrow screens. */
+.hero-split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: clamp(32px, 4vw, 64px); align-items: center; padding-bottom: 8px; }
+.hero-split h1 { font-size: clamp(38px, 4vw, 60px); }
+.hero-split .copy p { font-size: clamp(18px, 1.5vw, 22px); }
+.hero-split .carousel { margin-top: 0; }
+.hero-split .carousel figcaption { padding: 12px 16px; font-size: 15px; }
+.hero-split .carousel .controls { padding: 0 16px 14px; }
+@media (max-width: 960px) {
+  .hero-split { grid-template-columns: minmax(0, 1fr); }
+  .hero-split .carousel { margin-top: 12px; }
+}
