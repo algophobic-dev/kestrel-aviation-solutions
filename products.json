@@ -16,6 +16,23 @@
         "label": "Open the app",
         "url": "https://app.efb.kestrelaviation.tech"
       }
+    ],
+    "slides": [
+      {
+        "image": "img/slides/efb-route.jpg",
+        "alt": "A route from Rocky Mountain Metropolitan to Aspen on a VFR sectional chart, with distance, time and fuel",
+        "caption": "Routes on FAA charts"
+      },
+      {
+        "image": "img/slides/efb-airport.jpg",
+        "alt": "Airport page for Aspen with METAR, TAF, frequencies and runways",
+        "caption": "Airport weather and runways"
+      },
+      {
+        "image": "img/slides/efb-3d.jpg",
+        "alt": "3D terrain view along the route toward Aspen at 14,500 ft",
+        "caption": "Your route over terrain in 3D"
+      }
     ]
   },
   {
@@ -34,6 +51,23 @@
       {
         "label": "Open the app",
         "url": "https://app.drone.kestrelaviation.tech"
+      }
+    ],
+    "slides": [
+      {
+        "image": "img/slides/drone-laanc.jpg",
+        "alt": "FAA facility map grid near Rocky Mountain Metro, with a spot that needs LAANC authorization up to 400 ft",
+        "caption": "LAANC ceilings for every grid square"
+      },
+      {
+        "image": "img/slides/drone-restricted.jpg",
+        "alt": "A check at the White House: restricted, because of prohibited area P-56, a security TFR and the National Park Service",
+        "caption": "Restrictions explained, spot by spot"
+      },
+      {
+        "image": "img/slides/drone-weather.jpg",
+        "alt": "Drone weather: wind at three heights, conditions, twilight times and the Kp index",
+        "caption": "Weather for drones"
       }
     ]
   }

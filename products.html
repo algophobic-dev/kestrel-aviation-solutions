@@ -15,9 +15,10 @@
 <meta property="og:image" content="https://kestrelaviation.tech/img/kestrel-efb.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/img/icon.svg" type="image/svg+xml">
-<link rel="icon" href="/img/icon-180.png" type="image/png" sizes="180x180">
+<link rel="icon" href="/img/favicon.png" type="image/png" sizes="64x64">
 <link rel="apple-touch-icon" href="/img/icon-180.png">
 <link rel="stylesheet" href="/css/site.css">
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 <header class="nav">
@@ -26,13 +27,13 @@
 </header>
 <main>
 <section class="page-head wrap">
-  <h1>Products</h1>
-  <p>Software for pilots, students, instructors and anyone in aviation.</p>
+  <h1 data-rise>Products</h1>
+  <p data-rise style="--i:1">Software for pilots, students, instructors and anyone in aviation.</p>
 </section>
 
 <section class="wrap" style="margin-top:40px" aria-label="Product list">
   <div class="products">
-  <article class="product">
+  <article class="product" data-rise style="--i:0">
     <a class="pic" href="https://efb.kestrelaviation.tech" tabindex="-1" aria-hidden="true"><img src="/img/kestrel-efb.jpg" width="1200" height="750" alt="Kestrel EFB showing a route on a VFR sectional chart, with distance, time and fuel above the map" loading="lazy"></a>
     <div class="body">
       <div class="top"><h3>Kestrel EFB</h3><span class="tag on">Available</span></div>
@@ -41,7 +42,7 @@
       <div class="acts"><a class="btn" href="https://efb.kestrelaviation.tech">Visit Kestrel EFB</a><a class="link" href="https://app.efb.kestrelaviation.tech">Open the app</a></div>
     </div>
   </article>
-  <article class="product">
+  <article class="product" data-rise style="--i:1">
     <a class="pic" href="https://drone.kestrelaviation.tech" tabindex="-1" aria-hidden="true"><img src="/img/kestrel-drone.jpg" width="1200" height="750" alt="Kestrel Drone showing the FAA facility map grid near Rocky Mountain Metro airport, with a checked spot that needs LAANC authorization up to 400 ft" loading="lazy"></a>
     <div class="body">
       <div class="top"><h3>Kestrel Drone</h3><span class="tag">New</span></div>
@@ -61,5 +62,6 @@
     <div>© 2026 Kestrel Aviation Solutions</div>
   </div>
 </footer>
+<script src="/js/site.js" defer></script>
 </body>
 </html>

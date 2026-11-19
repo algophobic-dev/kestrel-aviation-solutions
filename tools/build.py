@@ -31,13 +31,12 @@ def url_of(name):
 def product_cards():
     items = json.loads((ROOT / "products.json").read_text())
     cards = []
-    for p in items:
-        external = lambda u: u.startswith("http")
+    for i, p in enumerate(items):
         links = "".join(
             f'<a class="{"btn" if i == 0 else "link"}" href="{e(l["url"])}">{e(l["label"])}</a>' for i, l in enumerate(p.get("links", [])))
         pic = f'<a class="pic" href="{e(p["url"])}" tabindex="-1" aria-hidden="true"><img src="/{e(p["image"])}" width="1200" height="750" alt="{e(p.get("image_alt", ""))}" loading="lazy"></a>' if p.get("image") else ""
         status = p.get("status", "")
-        cards.append(f"""<article class="product">
+        cards.append(f"""<article class="product" data-rise style="--i:{i}">
     {pic}
     <div class="body">
       <div class="top"><h3>{e(p["name"])}</h3>{f'<span class="tag{" on" if status == "Available" else ""}">{e(status)}</span>' if status else ""}</div>
@@ -49,10 +48,34 @@ def product_cards():
     return f'<div class="products{" one" if len(items) == 1 else ""}">\n  ' + "\n  ".join(cards) + "\n</div>"
 
 
+def carousel():
+    """The hero carousel: each product's slides, taken in turn (first slide of each product, then the second, and so on)."""
+    items = json.loads((ROOT / "products.json").read_text())
+    lists = [[(p, s) for s in p.get("slides") or ([{"image": p["image"], "alt": p.get("image_alt", ""), "caption": p.get("summary", "")}] if p.get("image") else [])] for p in items]
+    order = [x for k in range(max(map(len, lists), default=0)) for x in (l[k] for l in lists if k < len(l))]
+    n = len(order)
+    slides = "".join(f"""
+      <figure class="slide" role="group" aria-roledescription="slide" aria-label="{i + 1} of {n}: {e(p["name"])}">
+        <img src="/{e(s["image"])}" width="1200" height="750" alt="{e(s["alt"])}"{"" if i == 0 else ' loading="lazy"'}>
+        <figcaption><span class="prod">{e(p["name"])}</span><span class="cap">{e(s["caption"])}</span><a class="link" href="{e(p["url"])}">Learn more</a></figcaption>
+      </figure>""" for i, (p, s) in enumerate(order))
+    dots = "".join(f'<button type="button" class="dot" aria-label="Show slide {i + 1}"></button>' for i in range(n))
+    return f"""<div class="carousel" aria-roledescription="carousel" aria-label="Our products">
+    <div class="track" tabindex="0">{slides}
+    </div>
+    <div class="controls">
+      <button type="button" class="nav-btn prev" aria-label="Previous slide">&#8249;</button>
+      <div class="dots">{dots}</div>
+      <button type="button" class="nav-btn next" aria-label="Next slide">&#8250;</button>
+      <button type="button" class="pause" aria-label="Pause">Pause</button>
+    </div>
+  </div>"""
+
+
 def page(name, products):
     title, desc = PAGES[name]
     links = "".join(f'<li{" class=opt" if n == "about" else ""}><a href="{url_of(n)}"{" aria-current=page" if n == name else ""}>{label}</a></li>' for n, label in NAV)
-    body = (ROOT / "tools" / "pages" / f"{name}.html").read_text().replace("{{PRODUCTS}}", products)
+    body = (ROOT / "tools" / "pages" / f"{name}.html").read_text().replace("{{PRODUCTS}}", products).replace("{{CAROUSEL}}", carousel())
     canonical = "" if name == "404" else f'\n<link rel="canonical" href="{BASE}{url_of(name)}">'
     out = f"""<!doctype html>
 <html lang="en">
@@ -70,9 +93,10 @@ def page(name, products):
 <meta property="og:image" content="{BASE}/img/kestrel-efb.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/img/icon.svg" type="image/svg+xml">
-<link rel="icon" href="/img/icon-180.png" type="image/png" sizes="180x180">
+<link rel="icon" href="/img/favicon.png" type="image/png" sizes="64x64">
 <link rel="apple-touch-icon" href="/img/icon-180.png">
 <link rel="stylesheet" href="/css/site.css">
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 <header class="nav">
@@ -89,6 +113,7 @@ def page(name, products):
     <div>© 2026 Kestrel Aviation Solutions</div>
   </div>
 </footer>
+<script src="/js/site.js" defer></script>
 </body>
 </html>
 """

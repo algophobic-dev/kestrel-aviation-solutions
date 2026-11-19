@@ -15,9 +15,10 @@
 <meta property="og:image" content="https://kestrelaviation.tech/img/kestrel-efb.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/img/icon.svg" type="image/svg+xml">
-<link rel="icon" href="/img/icon-180.png" type="image/png" sizes="180x180">
+<link rel="icon" href="/img/favicon.png" type="image/png" sizes="64x64">
 <link rel="apple-touch-icon" href="/img/icon-180.png">
 <link rel="stylesheet" href="/css/site.css">
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 <header class="nav">
@@ -26,20 +27,20 @@
 </header>
 <main>
 <section class="page-head wrap">
-  <h1>About Kestrel Aviation Solutions</h1>
-  <p>We build aviation software that makes flying simpler and more affordable.</p>
+  <h1 data-rise>About Kestrel Aviation Solutions</h1>
+  <p data-rise style="--i:1">We build aviation software that makes flying simpler and more affordable.</p>
 </section>
 
 <section class="wrap" style="margin-top:40px">
-  <div class="panel prose">
+  <div class="panel prose" data-rise style="--i:0">
     <h2>What we do</h2>
     <p>Our first product is Kestrel EFB, a free electronic flight bag. It puts charts, weather, routes, approach plates, a preflight briefing and a logbook in one app for Mac, Windows, iPad and iPhone.</p>
     <p>Kestrel Aviation Solutions was started in 2026 by Vincent Ye, a student pilot and developer in Livingston, New Jersey. It began with a simple question: why does good flight planning software cost hundreds of dollars a year? Kestrel EFB was the answer: a full-featured flight bag that anyone can use for free. Today we’re a small team building more tools for pilots, students, instructors and the wider aviation community, and we build them around what our users ask for.</p>
   </div>
   <div class="cols">
-    <div class="panel"><h3>Who it's for</h3><p class="soft">Pilots, student pilots, flight instructors and anyone else in aviation.</p></div>
-    <div class="panel"><h3>What it costs</h3><p class="soft">Kestrel EFB is free, with no account needed to use it.</p></div>
-    <div class="panel"><h3>Where we are</h3><p class="soft">Livingston, New Jersey</p></div>
+    <div class="panelNone" data-rise style="--i:1"><h3>Who it's for</h3><p class="soft">Pilots, student pilots, flight instructors and anyone else in aviation.</p></div>
+    <div class="panelNone" data-rise style="--i:2"><h3>What it costs</h3><p class="soft">Kestrel EFB is free, with no account needed to use it.</p></div>
+    <div class="panelNone" data-rise style="--i:0"><h3>Where we are</h3><p class="soft">Livingston, New Jersey</p></div>
   </div>
   <div class="acts"><a class="btn" href="/products.html">See our products</a><a class="link" href="/contact.html">Contact us</a></div>
 </section>
@@ -52,5 +53,6 @@
     <div>© 2026 Kestrel Aviation Solutions</div>
   </div>
 </footer>
+<script src="/js/site.js" defer></script>
 </body>
 </html>

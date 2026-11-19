@@ -101,3 +101,39 @@ footer nav a:hover { color: var(--accent); }
   .products.one .product .pic { border-right: 0; border-bottom: 1px solid var(--line); }
   .products.one .product .pic img { height: auto; }
 }
+
+/* Hero carousel: one product picture at a time. Without script it is a row you can swipe or scroll. */
+.carousel { margin-top: clamp(36px, 5vw, 56px); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--panel); box-shadow: 0 24px 60px rgba(0, 0, 0, .4); }
+.carousel .track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; outline: none; }
+.carousel .track::-webkit-scrollbar { display: none; }
+.carousel .slide { flex: 0 0 100%; margin: 0; scroll-snap-align: start; position: relative; }
+.carousel .slide img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: left top; }
+.carousel figcaption { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; padding: 16px 22px; border-top: 1px solid var(--line); }
+.carousel .prod { font-weight: 700; }
+.carousel .cap { color: var(--soft); flex: 1; min-width: 12ch; }
+.carousel .controls { display: flex; align-items: center; gap: 10px; padding: 0 22px 18px; }
+.carousel .dots { display: flex; gap: 8px; flex: 1; justify-content: center; }
+.carousel .dot { width: 10px; height: 10px; border-radius: 50%; border: 0; padding: 0; background: var(--raised); cursor: pointer; transition: background .25s, transform .25s; }
+.carousel .dot[aria-current="true"] { background: var(--accent); transform: scale(1.25); }
+.carousel .nav-btn, .carousel .pause { height: 36px; min-width: 36px; padding: 0 10px; border-radius: var(--r); border: 0; background: var(--raised); color: var(--ink); font: 600 18px/1 var(--font); cursor: pointer; transition: background .15s; }
+.carousel .pause { font-size: 13px; }
+.carousel .nav-btn:hover, .carousel .pause:hover { background: #303c46; }
+.js .carousel .slide img { transition: transform 6s ease-out; }
+.js .carousel .slide.on img { transform: scale(1.03); }
+html:not(.js) .carousel .controls { display: none; }
+
+/* Motion: parts of each page rise in as they come into view. Everything shows at once without script or with reduced motion. */
+.js [data-rise] { opacity: 0; transform: translateY(22px); transition: opacity .7s cubic-bezier(.2, .7, .2, 1), transform .7s cubic-bezier(.2, .7, .2, 1); transition-delay: calc(var(--i, 0) * 90ms); }
+.js [data-rise].in { opacity: 1; transform: none; }
+.product, .panel { transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
+.product:hover { transform: translateY(-4px); border-color: #3e5361; box-shadow: 0 16px 40px rgba(0, 0, 0, .35); }
+.product .pic img { transition: transform .6s ease; }
+.product:hover .pic img { transform: scale(1.03); }
+.btn { transition: background .15s, transform .15s; }
+.btn:hover { transform: translateY(-1px); }
+.nav ul a:not(.btn), .link { transition: color .15s; }
+@media (prefers-reduced-motion: reduce) {
+  .js [data-rise] { opacity: 1; transform: none; transition: none; }
+  .carousel .track { scroll-behavior: auto; }
+  .js .carousel .slide img, .product, .product .pic img, .btn { transition: none; transform: none !important; }
+}

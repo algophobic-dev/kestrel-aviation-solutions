@@ -15,9 +15,10 @@
 <meta property="og:image" content="https://kestrelaviation.tech/img/kestrel-efb.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/img/icon.svg" type="image/svg+xml">
-<link rel="icon" href="/img/icon-180.png" type="image/png" sizes="180x180">
+<link rel="icon" href="/img/favicon.png" type="image/png" sizes="64x64">
 <link rel="apple-touch-icon" href="/img/icon-180.png">
 <link rel="stylesheet" href="/css/site.css">
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 <header class="nav">
@@ -26,21 +27,55 @@
 </header>
 <main>
 <section class="intro wrap">
-  <h1>Aviation software that makes flying simpler</h1>
-  <p>Kestrel Aviation Solutions builds software that makes flying simpler and more affordable, for pilots, students, instructors and anyone in aviation.</p>
-  <div class="acts">
+  <h1 data-rise>Aviation software that makes flying simpler</h1>
+  <p data-rise style="--i:1">Kestrel Aviation Solutions builds software that makes flying simpler and more affordable, for pilots, students, instructors and anyone in aviation.</p>
+  <div class="acts" data-rise style="--i:2">
     <a class="btn" href="/products.html">See our products</a>
     <a class="link" href="/about.html">About us</a>
   </div>
+  <div data-rise style="--i:3"><div class="carousel" aria-roledescription="carousel" aria-label="Our products">
+    <div class="track" tabindex="0">
+      <figure class="slide" role="group" aria-roledescription="slide" aria-label="1 of 6: Kestrel EFB">
+        <img src="/img/slides/efb-route.jpg" width="1200" height="750" alt="A route from Rocky Mountain Metropolitan to Aspen on a VFR sectional chart, with distance, time and fuel">
+        <figcaption><span class="prod">Kestrel EFB</span><span class="cap">Routes on FAA charts</span><a class="link" href="https://efb.kestrelaviation.tech">Learn more</a></figcaption>
+      </figure>
+      <figure class="slide" role="group" aria-roledescription="slide" aria-label="2 of 6: Kestrel Drone">
+        <img src="/img/slides/drone-laanc.jpg" width="1200" height="750" alt="FAA facility map grid near Rocky Mountain Metro, with a spot that needs LAANC authorization up to 400 ft" loading="lazy">
+        <figcaption><span class="prod">Kestrel Drone</span><span class="cap">LAANC ceilings for every grid square</span><a class="link" href="https://drone.kestrelaviation.tech">Learn more</a></figcaption>
+      </figure>
+      <figure class="slide" role="group" aria-roledescription="slide" aria-label="3 of 6: Kestrel EFB">
+        <img src="/img/slides/efb-airport.jpg" width="1200" height="750" alt="Airport page for Aspen with METAR, TAF, frequencies and runways" loading="lazy">
+        <figcaption><span class="prod">Kestrel EFB</span><span class="cap">Airport weather and runways</span><a class="link" href="https://efb.kestrelaviation.tech">Learn more</a></figcaption>
+      </figure>
+      <figure class="slide" role="group" aria-roledescription="slide" aria-label="4 of 6: Kestrel Drone">
+        <img src="/img/slides/drone-restricted.jpg" width="1200" height="750" alt="A check at the White House: restricted, because of prohibited area P-56, a security TFR and the National Park Service" loading="lazy">
+        <figcaption><span class="prod">Kestrel Drone</span><span class="cap">Restrictions explained, spot by spot</span><a class="link" href="https://drone.kestrelaviation.tech">Learn more</a></figcaption>
+      </figure>
+      <figure class="slide" role="group" aria-roledescription="slide" aria-label="5 of 6: Kestrel EFB">
+        <img src="/img/slides/efb-3d.jpg" width="1200" height="750" alt="3D terrain view along the route toward Aspen at 14,500 ft" loading="lazy">
+        <figcaption><span class="prod">Kestrel EFB</span><span class="cap">Your route over terrain in 3D</span><a class="link" href="https://efb.kestrelaviation.tech">Learn more</a></figcaption>
+      </figure>
+      <figure class="slide" role="group" aria-roledescription="slide" aria-label="6 of 6: Kestrel Drone">
+        <img src="/img/slides/drone-weather.jpg" width="1200" height="750" alt="Drone weather: wind at three heights, conditions, twilight times and the Kp index" loading="lazy">
+        <figcaption><span class="prod">Kestrel Drone</span><span class="cap">Weather for drones</span><a class="link" href="https://drone.kestrelaviation.tech">Learn more</a></figcaption>
+      </figure>
+    </div>
+    <div class="controls">
+      <button type="button" class="nav-btn prev" aria-label="Previous slide">&#8249;</button>
+      <div class="dots"><button type="button" class="dot" aria-label="Show slide 1"></button><button type="button" class="dot" aria-label="Show slide 2"></button><button type="button" class="dot" aria-label="Show slide 3"></button><button type="button" class="dot" aria-label="Show slide 4"></button><button type="button" class="dot" aria-label="Show slide 5"></button><button type="button" class="dot" aria-label="Show slide 6"></button></div>
+      <button type="button" class="nav-btn next" aria-label="Next slide">&#8250;</button>
+      <button type="button" class="pause" aria-label="Pause">Pause</button>
+    </div>
+  </div></div>
 </section>
 
 <section class="wrap" aria-labelledby="products">
-  <div class="sect-head">
+  <div class="sect-head" data-rise>
     <h2 id="products">Products</h2>
     <a class="link small" href="/products.html">All products</a>
   </div>
   <div class="products">
-  <article class="product">
+  <article class="product" data-rise style="--i:0">
     <a class="pic" href="https://efb.kestrelaviation.tech" tabindex="-1" aria-hidden="true"><img src="/img/kestrel-efb.jpg" width="1200" height="750" alt="Kestrel EFB showing a route on a VFR sectional chart, with distance, time and fuel above the map" loading="lazy"></a>
     <div class="body">
       <div class="top"><h3>Kestrel EFB</h3><span class="tag on">Available</span></div>
@@ -49,7 +84,7 @@
       <div class="acts"><a class="btn" href="https://efb.kestrelaviation.tech">Visit Kestrel EFB</a><a class="link" href="https://app.efb.kestrelaviation.tech">Open the app</a></div>
     </div>
   </article>
-  <article class="product">
+  <article class="product" data-rise style="--i:1">
     <a class="pic" href="https://drone.kestrelaviation.tech" tabindex="-1" aria-hidden="true"><img src="/img/kestrel-drone.jpg" width="1200" height="750" alt="Kestrel Drone showing the FAA facility map grid near Rocky Mountain Metro airport, with a checked spot that needs LAANC authorization up to 400 ft" loading="lazy"></a>
     <div class="body">
       <div class="top"><h3>Kestrel Drone</h3><span class="tag">New</span></div>
@@ -62,7 +97,7 @@
 </section>
 
 <section class="wrap" aria-labelledby="about">
-  <div class="panel">
+  <div class="panel" data-rise>
     <h2 id="about">About</h2>
     <p class="soft" style="margin-top:14px">We build tools that are simple to learn and cost pilots little or nothing. Our first product, Kestrel EFB, is free and runs on Mac, Windows, iPad and iPhone.</p>
     <div class="acts"><a class="link" href="/about.html">More about us</a><a class="link" href="/contact.html">Contact us</a></div>
@@ -77,5 +112,6 @@
     <div>© 2026 Kestrel Aviation Solutions</div>
   </div>
 </footer>
+<script src="/js/site.js" defer></script>
 </body>
 </html>
