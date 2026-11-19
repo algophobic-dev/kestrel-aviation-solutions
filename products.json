@@ -8,8 +8,33 @@
     "image": "img/kestrel-efb.jpg",
     "image_alt": "Kestrel EFB showing a route on a VFR sectional chart, with distance, time and fuel above the map",
     "links": [
-      { "label": "Visit Kestrel EFB", "url": "https://efb.kestrelaviation.tech" },
-      { "label": "Open the app", "url": "https://app.efb.kestrelaviation.tech" }
+      {
+        "label": "Visit Kestrel EFB",
+        "url": "https://efb.kestrelaviation.tech"
+      },
+      {
+        "label": "Open the app",
+        "url": "https://app.efb.kestrelaviation.tech"
+      }
+    ]
+  },
+  {
+    "name": "Kestrel Drone",
+    "status": "New",
+    "summary": "A free airspace and preflight app for drone pilots.",
+    "description": "Tap a spot to see if you can fly there, with the LAANC ceiling, TFRs and security restrictions. Drone weather with winds at 400 ft, the Kp index and twilight, plus a flight log and checklist. For recreational and Part 107 pilots.",
+    "url": "https://drone.kestrelaviation.tech",
+    "image": "img/kestrel-drone.jpg",
+    "image_alt": "Kestrel Drone showing the FAA facility map grid near Rocky Mountain Metro airport, with a checked spot that needs LAANC authorization up to 400 ft",
+    "links": [
+      {
+        "label": "Visit Kestrel Drone",
+        "url": "https://drone.kestrelaviation.tech"
+      },
+      {
+        "label": "Open the app",
+        "url": "https://app.drone.kestrelaviation.tech"
+      }
     ]
   }
 ]

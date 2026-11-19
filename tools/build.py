@@ -77,7 +77,7 @@ def page(name, products):
 <body>
 <header class="nav">
   <a class="mark" href="/"><img src="/img/icon-180.png" width="28" height="28" alt="">Kestrel Aviation Solutions</a>
-  <nav aria-label="Main"><ul>{links}<li><a class="btn sm" href="{EFB}">Kestrel EFB</a></li></ul></nav>
+  <nav aria-label="Main"><ul>{links}</ul></nav>
 </header>
 <main>
 {body}
