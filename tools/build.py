@@ -113,6 +113,7 @@ def page(name, products):
     <div>© 2026 Kestrel Aviation Solutions</div>
   </div>
 </footer>
+<script src="/js/bg.js" data-mode="plane" defer></script>
 <script src="/js/site.js" defer></script>
 </body>
 </html>
